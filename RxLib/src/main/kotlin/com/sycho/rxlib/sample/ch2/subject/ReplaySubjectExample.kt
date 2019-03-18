@@ -6,7 +6,7 @@ import io.reactivex.subjects.ReplaySubject
  * ReplaySubject는 구독자가 새로 생기면 항상 데이터의 처음부터 끝까지 발행한다.
  * 모든 데이터를 저장해두기 때문에 이 과정에서 메모리 누수 조심해야 한다.
  *
- * @author 파인원_조성용선임
+ * @author Cho Seong-yong
  * @since 2019.02.28
  */
 class ReplaySubjectExample {

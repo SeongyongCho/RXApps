@@ -5,7 +5,7 @@ import io.reactivex.subjects.PublishSubject
 /**
  * PublishSubject 클래스는 구독자가 subscribe() 함수를 호출하면 값을 발행하기 시작한다.
  *
- * @author 파인원_조성용선임
+ * @author Cho Seong-yong
  * @since 2019.02.28
  */
 class PublishSubjectExample {

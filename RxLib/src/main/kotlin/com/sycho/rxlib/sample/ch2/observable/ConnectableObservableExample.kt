@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit
  * 원 데이터를 여러 구독자에게 동시에 전달할 때 사용한다.
  * 발행시점은 connect() 함수 호출이다. subscribe() 함수만 호출해서는 발행되지 않는다.
  *
- * @author 파인원_조성용선임
+ * @author Cho Seong-yong
  * @since 2019.02.28
  */
 class ConnectableObservableExample {

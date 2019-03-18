@@ -12,7 +12,7 @@ import kotlin.math.min
 /**
  * 전기요금 계산 예제
  *
- * @author 파인원_조성용선임
+ * @author Cho Seong-yong
  * @since 2019.03.11
  */
 class ElectricBills {

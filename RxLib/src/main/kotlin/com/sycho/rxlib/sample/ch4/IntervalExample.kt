@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit
  * interval() 함수는 일정 시간 간격으로 데이터 흐름을 생성한다.
  * 계산 동작은 별도 thread에서 동작한다.
  *
- * @author 파인원_조성용선임
+ * @author Cho Seong-yong
  * @since 2019.03.06
  */
 class IntervalExample {

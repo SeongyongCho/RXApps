@@ -9,7 +9,7 @@ import io.reactivex.subjects.BehaviorSubject
  * AsyncSubject 클래스는 Observable에서 발행한 마지막 데이터를 얻어 올 수 있다.
  * 완료되기 전 마지막 데이터만 생각하면 되고 그 이전 데이터는 무시된다.
  *
- * @author 파인원_조성용선임
+ * @author Cho Seong-yong
  * @since 2019.02.28
  */
 class AsyncSubjectExample {

@@ -5,7 +5,7 @@ import io.reactivex.subjects.BehaviorSubject
 /**
  * BehaviorSubject 클래스는 구독자가 구독하면 가장 최근 값 혹은 기본값을 넘겨주는 클래스이다.
  *
- * @author 파인원_조성용선임
+ * @author Cho Seong-yong
  * @since 2019.02.28
  */
 class BehaviorSubjectExample {

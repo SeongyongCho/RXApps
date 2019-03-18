@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit
 /**
  * Description
  *
- * @author 파인원_조성용선임
+ * @author Cho Seong-yong
  * @since 2019.03.11
  */
 class AmbExample {
