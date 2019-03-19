@@ -17,13 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,MissingTvBanner">
-        <activity android:name=".activities.LoopActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".activities.HelloActivityV3" />
+        <activity android:name=".activities.LoopActivity" />
     </application>
 
 </manifest>
