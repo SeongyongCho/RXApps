@@ -10,7 +10,7 @@ import com.sycho.rxapps.log.LogAdapter
 import io.reactivex.Observable
 import io.reactivex.functions.Consumer
 import io.reactivex.rxkotlin.toObservable
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_loop.*
 
 /**
  * java와 rxJava 버전별로 제어 흐름 구현 비교.
@@ -32,7 +32,7 @@ class LoopActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_loop)
 
         setupLogger()
         setSampleTitle()
