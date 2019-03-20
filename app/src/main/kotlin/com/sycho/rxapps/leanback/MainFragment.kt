@@ -26,6 +26,7 @@ class MainFragment : RowsSupportFragment() {
 
     private lateinit var mContentsRowAdapter: ArrayObjectAdapter
 
+    // 리스너를 등록하지 않았을 경우 null 체크 가능하도록 null 허용한다.
     private var mOnItemViewClickedListener: OnItemViewClickedListener? = null
 
     private var mOnItemViewSelectedListener: OnItemViewSelectedListener? = null
@@ -41,11 +42,12 @@ class MainFragment : RowsSupportFragment() {
         super.onActivityCreated(savedInstanceState)
 
         onItemViewClickedListener = OnItemViewClickedListener { itemViewHolder, item, rowViewHolder, row ->
-            mOnItemViewClickedListener?.onItemClicked(itemViewHolder, item, rowViewHolder, row)
-        }
+                // null을 허용할경우 null 체크 되도록 ? 붙여야 한다.
+                mOnItemViewClickedListener?.onItemClicked(itemViewHolder, item, rowViewHolder, row)
+            }
         onItemViewSelectedListener = OnItemViewSelectedListener { itemViewHolder, item, rowViewHolder, row ->
-            mOnItemViewSelectedListener?.onItemSelected(itemViewHolder, item, rowViewHolder, row)
-        }
+                mOnItemViewSelectedListener?.onItemSelected(itemViewHolder, item, rowViewHolder, row)
+            }
 
         mContentsRowAdapter = ArrayObjectAdapter(ListRowPresenter())
         adapter = mContentsRowAdapter
@@ -57,7 +59,10 @@ class MainFragment : RowsSupportFragment() {
         super.onDestroyView()
     }
 
-    private fun requestMainContents(jsonName: String) : Observable<ArrayList<MainContentData>> {
+    /**
+     * assets에서 json 파일 읽어서 생성한 ArrayList<MainContentData>를 발행하는 Observable
+     */
+    private fun requestMainContents(jsonName: String): Observable<ArrayList<MainContentData>> {
         return Observable.create { emitter ->
             val mainContentDataList = ArrayList<MainContentData>()
             var json: String? = null
@@ -73,15 +78,19 @@ class MainFragment : RowsSupportFragment() {
             } catch (e: Exception) {
                 emitter.onError(e)
             }
-            json.let {
+            // json이 null이 아닐경우만 실행해야 하므로 let 사용함.
+            json?.let {
                 val jsonObject = JSONObject(it)
                 val jsonArray = jsonObject.getJSONArray("main_card_list")
                 val gson = Gson()
                 if (jsonArray != null) {
-
+                    // for 루프는 0부터 jsonArray의 카운트만큼 돌린다
                     for (i in 0 until jsonArray.length()) {
                         val record = jsonArray.getJSONObject(i)
-                        val mainContentData = gson.fromJson<MainContentData>(record.toString(), MainContentData::class.java)
+                        // Gson.romJson()에서 필요한것은 Java class 이므로
+                        // kotlin class인 MainContentData를 Java class로 매핑해준다.
+                        val mainContentData = gson.fromJson<MainContentData>(record.toString(), MainContentData::class.java
+                        )
                         mainContentDataList.add(mainContentData)
                     }
                     emitter.onNext(mainContentDataList)
@@ -92,7 +101,10 @@ class MainFragment : RowsSupportFragment() {
         }
     }
 
-    private fun responseMainContents(mainContentDataList: ArrayList<MainContentData>) : Observable<ListRow> {
+    /**
+     * 전달된 데이터 리스트를 adapter에 집어넣어 [ListRow]를 생성하여 발행한다.
+     */
+    private fun responseMainContents(mainContentDataList: ArrayList<MainContentData>): Observable<ListRow> {
         return Observable.create { emitter ->
             val headerItem = HeaderItem("Activities")
             val mainContentsAdapter = ArrayObjectAdapter(MainContentCardPresenter())
@@ -105,11 +117,16 @@ class MainFragment : RowsSupportFragment() {
         }
     }
 
+    /**
+     * [requestMainContents] Observable과 [responseMainContents] Observable을 결합할것이다.
+     * 이 때, 순차적으로 처리되도록 [Observable.concatMap]을 사용하였다.
+     */
     private fun initMainContentsRow() {
         requestMainContents("main_card_list.json")
             .subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
-            .concatMap {
-                responseMainContents(it).observeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
+            .concatMap { mainContentDataList ->
+                // requestMainContents()에서 발행된 데이터 리스트를 인자로 전달한다.
+                responseMainContents(mainContentDataList).observeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
             }
             .subscribe(object : Observer<ListRow> {
                 override fun onComplete() {

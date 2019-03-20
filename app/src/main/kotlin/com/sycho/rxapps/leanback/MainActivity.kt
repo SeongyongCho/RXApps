@@ -11,7 +11,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.Exception
 
 /**
- * Main gateway activity
+ * Main gateway activity.
+ * 사용하는 Leanback의 [androidx.leanback.app.RowsSupportFragment]는 [androidx.fragment.app.Fragment]를 상속하므로
+ * 이에 맞춰서 Activity도 [androidx.fragment.app.FragmentActivity]를 상속하도록 한다.
  *
  * @author Cho Seong-yong
  * @since 2019.03.19

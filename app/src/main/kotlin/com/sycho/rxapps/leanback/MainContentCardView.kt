@@ -26,6 +26,24 @@ class MainContentCardView : BaseCardView {
         initCard(context)
     }
 
+    // 위 생성자들을 java로 decompile한 결과이다.
+    // Context에 null이 들어갈경우 바로 NullPointerException이다...
+//    public MainContentCardView(@NotNull Context context) {
+//        Intrinsics.checkParameterIsNotNull(context, "context");
+//        this(context, (AttributeSet)null);
+//    }
+//
+//    public MainContentCardView(@NotNull Context context, @Nullable AttributeSet attrs) {
+//        Intrinsics.checkParameterIsNotNull(context, "context");
+//        this(context, attrs, 0);
+//    }
+//
+//    public MainContentCardView(@NotNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+//        Intrinsics.checkParameterIsNotNull(context, "context");
+//        super(context, attrs, defStyleAttr);
+//        this.initCard(context);
+//    }
+
     private lateinit var mCardTitleTextView: TextView
 
     private fun initCard(context: Context) {
@@ -39,6 +57,8 @@ class MainContentCardView : BaseCardView {
     }
 
     fun setCardTitle(title: String) {
+        // mCardTitleTextView는 생성자에서 초기화한다.
+        // null이 될 수 없으니 불필요한 null 처리는 필요 없다.
         mCardTitleTextView.text = title
     }
 
