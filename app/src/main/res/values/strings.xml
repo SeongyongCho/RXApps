@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RXApps</string>
+    <string name="main_li_title">Activity Title</string>
+    <string name="main_li_description">Description</string>
 </resources>

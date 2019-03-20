@@ -1,0 +1,18 @@
+{
+  "main_card_list": [
+    {
+      "title": "LoopActivity",
+      "description": "java에서의 for루프와 if문을 rxJava로 구현한다.",
+      "title_color": "#eeeeee",
+      "card_color": "#3a354e",
+      "component": "com.sycho.rxapps.activities.LoopActivity"
+    },
+    {
+      "title": "HelloActivityV3",
+      "description": "RxLifecycle을 사용하여 종료시 Observable이 해제되도록 한다.",
+      "title_color": "#eeeeee",
+      "card_color": "#3a354e",
+      "component": "com.sycho.rxapps.activities.HelloActivityV3"
+    }
+  ]
+}

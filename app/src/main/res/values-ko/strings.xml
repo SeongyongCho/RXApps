@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RXApps</string>
+    <string name="main_li_title">Activity 타이틀</string>
+    <string name="main_li_description">설명</string>
+</resources>
