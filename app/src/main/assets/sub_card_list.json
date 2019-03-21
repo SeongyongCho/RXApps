@@ -1,0 +1,9 @@
+{
+  "sub_card_list": [
+    {
+      "title": "OnClick",
+      "description": "OnClick method에 Observable을 활용한다.",
+      "id": "6-8_on_click"
+    }
+  ]
+}

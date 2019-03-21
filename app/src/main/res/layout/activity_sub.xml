@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_padding"
+    tools:context=".leanback.SubActivity">
+
+    <FrameLayout
+        android:id="@+id/sub_contents"
+        android:layout_width="match_parent"
+        android:layout_height="380dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="25dp" />
+
+    <fragment
+        android:id="@+id/sub_containers"
+        android:name="com.sycho.rxapps.leanback.SubFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/sub_contents"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/lb_rows_fragment" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

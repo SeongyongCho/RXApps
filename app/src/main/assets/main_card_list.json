@@ -13,6 +13,13 @@
       "title_color": "#eeeeee",
       "card_color": "#3a354e",
       "component": "com.sycho.rxapps.activities.HelloActivityV3"
+    },
+    {
+      "title": "SubActivity",
+      "description": "Fragment 기반으로 작성된 예제들",
+      "title_color": "#eeeeee",
+      "card_color": "#3a354e",
+      "component": "com.sycho.rxapps.leanback.SubActivity"
     }
   ]
 }
