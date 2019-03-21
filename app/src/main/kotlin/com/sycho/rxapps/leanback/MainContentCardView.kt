@@ -27,7 +27,7 @@ class MainContentCardView : BaseCardView {
     }
 
     // 위 생성자들을 java로 decompile한 결과이다.
-    // Context에 null이 들어갈경우 바로 NullPointerException이다...
+    // Context를 NotNull로 하였으므로 null이 들어갈경우 바로 NullPointerException이다...
 //    public MainContentCardView(@NotNull Context context) {
 //        Intrinsics.checkParameterIsNotNull(context, "context");
 //        this(context, (AttributeSet)null);
