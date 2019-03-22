@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.sycho.rxapps.R
+import kotlinx.android.synthetic.main.widget_log_card.view.*
 
 /**
  * Description
@@ -14,16 +15,23 @@ import com.sycho.rxapps.R
  * @author Cho Seong-yong
  * @since 2019.03.18
  */
-class LogAdapter : RecyclerView.Adapter<LogAdapter.ViewHolder> {
+class LogAdapter(logItemList: ArrayList<String>) : RecyclerView.Adapter<LogAdapter.ViewHolder>() {
 
-    private var logList: ArrayList<String>
+    // primary constructor로 넘어온 logItemList로 바로 대입한다.
+    // 프로퍼티 대입만 하는 생성자의 경우 이걸로 끝이다.
+    private var logList: ArrayList<String> = logItemList
 
-    class ViewHolder : RecyclerView.ViewHolder, View.OnFocusChangeListener, View.OnClickListener, View.OnKeyListener {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnFocusChangeListener, View.OnClickListener, View.OnKeyListener {
 
-        var logTextView: TextView
+        // 프로퍼티를 이곳에 추가하면 getter가 만들어진다.
+        // 인스턴스 지정을 이곳에 하면 생성자에서 findViewById() 호출된다.
+        // Activity나 Fragment처럼 HashMap _$_findViewCache 캐시가 없기 때문에
+        // 이렇게 합성 프로퍼티 자체를 가져오도록 하면 findViewById() 호출은 생성자에서의 한 번으로 끝이다.
+        val logTextView: TextView = itemView.tv_log
 
-        constructor(itemView: View) : super(itemView) {
-            logTextView = itemView.findViewById(R.id.tv_log)
+        // primary constructor
+        // constructor(itemView: View) {}
+        init {
             itemView.onFocusChangeListener = this
             itemView.setOnClickListener(this)
             itemView.setOnKeyListener(this)
@@ -40,10 +48,6 @@ class LogAdapter : RecyclerView.Adapter<LogAdapter.ViewHolder> {
         override fun onKey(v: View?, keyCode: Int, event: KeyEvent?): Boolean {
             return false
         }
-    }
-
-    constructor(logItemList: ArrayList<String>) {
-        logList = logItemList
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LogAdapter.ViewHolder {
@@ -63,8 +67,9 @@ class LogAdapter : RecyclerView.Adapter<LogAdapter.ViewHolder> {
 
     override fun onBindViewHolder(holder: LogAdapter.ViewHolder, position: Int) {
         if (logList.size > position) {
-            val item = logList[position]
-            holder.logTextView.text = item
+            with(holder) {
+                logTextView.text = logList[position]
+            }
         }
     }
 
