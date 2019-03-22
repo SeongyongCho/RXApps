@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.leanback.widget.OnItemViewClickedListener
 import com.sycho.rxapps.Constants
-import com.sycho.rxapps.OnClickFragment
+import com.sycho.rxapps.fragments.OnClickFragment
 import com.sycho.rxapps.R
 
 class SubActivity : FragmentActivity() {
