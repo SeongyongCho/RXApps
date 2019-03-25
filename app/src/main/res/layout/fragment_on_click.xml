@@ -1,13 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragments.OnClickFragment">
 
-    <TextView
+    <Button
+        android:id="@+id/btn_click_observer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello blank fragment" />
+        android:layout_height="wrap_content"
+        android:text="Normal" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/btn_click_observer_lambda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lambda" />
+
+    <Button
+        android:id="@+id/btn_click_observer_binding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RxBinding" />
+
+    <Button
+        android:id="@+id/btn_click_observer_extra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="7" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_log"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
