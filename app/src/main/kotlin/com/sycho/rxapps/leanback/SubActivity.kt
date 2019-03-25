@@ -7,6 +7,7 @@ import androidx.leanback.widget.OnItemViewClickedListener
 import com.sycho.rxapps.Constants
 import com.sycho.rxapps.fragments.OnClickFragment
 import com.sycho.rxapps.R
+import com.sycho.rxapps.fragments.DebounceSearchFragment
 
 class SubActivity : FragmentActivity() {
 
@@ -27,6 +28,9 @@ class SubActivity : FragmentActivity() {
         when (type) {
             Constants.SUB_FRAGMENT_ID_ON_CLICK -> {
                 fragment = OnClickFragment()
+            }
+            Constants.SUB_FRAGMENT_ID_DEBOUNCE_SEARCH -> {
+                fragment = DebounceSearchFragment()
             }
         }
         fragment?.let {
