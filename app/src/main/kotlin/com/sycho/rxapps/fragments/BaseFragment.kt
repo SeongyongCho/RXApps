@@ -34,7 +34,7 @@ abstract class BaseFragment : Fragment() {
 
     abstract fun getLayoutId(): Int
 
-    abstract fun getLogViewId(): Int
+    abstract fun getLogViewId(): Int?
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,8 +42,11 @@ abstract class BaseFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(getLayoutId(), container, false)
-        mLogView = view.findViewById(getLogViewId())
-        setupLogger()
+        val logViewId = getLogViewId()
+        logViewId?.let {
+            mLogView = view.findViewById(logViewId)
+            setupLogger()
+        }
         return view
     }
 

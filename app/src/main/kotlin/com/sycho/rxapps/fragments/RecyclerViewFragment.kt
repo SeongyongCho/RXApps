@@ -31,8 +31,8 @@ class RecyclerViewFragment : BaseFragment() {
         return R.layout.fragment_recycler_view
     }
 
-    override fun getLogViewId(): Int {
-        return R.id.rv_log
+    override fun getLogViewId(): Int? {
+        return null
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
