@@ -27,6 +27,7 @@
         <activity android:name=".activities.HelloActivityV3" />
         <activity android:name=".activities.LoopActivity" />
         <activity android:name=".leanback.SubActivity" />
+        <activity android:name=".activities.AsyncTaskActivity" />
     </application>
 
 </manifest>

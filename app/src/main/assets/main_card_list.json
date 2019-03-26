@@ -20,6 +20,13 @@
       "title_color": "#eeeeee",
       "card_color": "#3a354e",
       "component": "com.sycho.rxapps.leanback.SubActivity"
+    },
+    {
+      "title": "AsyncTaskActivity",
+      "description": "RxAndroid 적용 AsyncTask",
+      "title_color": "#eeeeee",
+      "card_color": "#3a354e",
+      "component": "com.sycho.rxapps.activities.AsyncTaskActivity"
     }
   ]
 }
