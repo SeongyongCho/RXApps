@@ -14,6 +14,11 @@
       "title": "RecyclerView",
       "description": "Reactive RecyclerView",
       "id": "6-13_recycler_view"
+    },
+    {
+      "title": "Polling",
+      "description": "RxAndroid를 이용한 Timer 클래스 대체",
+      "id": "6-25_polling"
     }
   ]
 }

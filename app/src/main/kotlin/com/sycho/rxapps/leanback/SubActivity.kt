@@ -8,6 +8,7 @@ import com.sycho.rxapps.Constants
 import com.sycho.rxapps.fragments.OnClickFragment
 import com.sycho.rxapps.R
 import com.sycho.rxapps.fragments.DebounceSearchFragment
+import com.sycho.rxapps.fragments.PollingFragment
 import com.sycho.rxapps.fragments.RecyclerViewFragment
 
 class SubActivity : FragmentActivity() {
@@ -35,6 +36,9 @@ class SubActivity : FragmentActivity() {
             }
             Constants.SUB_FRAGMENT_ID_RECYCLER_VIEW -> {
                 fragment = RecyclerViewFragment()
+            }
+            Constants.SUB_FRAGMENT_ID_POLLING -> {
+                fragment = PollingFragment()
             }
         }
         fragment?.let {

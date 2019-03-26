@@ -27,6 +27,13 @@
       "title_color": "#eeeeee",
       "card_color": "#3a354e",
       "component": "com.sycho.rxapps.activities.AsyncTaskActivity"
+    },
+    {
+      "title": "TimerActivity",
+      "description": "Android에서 사용하던 TimerTask",
+      "title_color": "#eeeeee",
+      "card_color": "#3a354e",
+      "component": "com.sycho.rxapps.activities.TimerActivity"
     }
   ]
 }
