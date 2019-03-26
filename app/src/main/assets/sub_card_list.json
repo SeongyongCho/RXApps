@@ -9,6 +9,11 @@
       "title": "DebounceSearch",
       "description": "추천 검색어 기능 구현하기.",
       "id": "6-12_debounce_search"
+    },
+    {
+      "title": "RecyclerView",
+      "description": "Reactive RecyclerView",
+      "id": "6-13_recycler_view"
     }
   ]
 }

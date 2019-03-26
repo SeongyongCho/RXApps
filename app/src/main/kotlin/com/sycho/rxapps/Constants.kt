@@ -9,4 +9,5 @@ package com.sycho.rxapps
 object Constants {
     const val SUB_FRAGMENT_ID_ON_CLICK = "6-8_on_click"
     const val SUB_FRAGMENT_ID_DEBOUNCE_SEARCH = "6-12_debounce_search"
+    const val SUB_FRAGMENT_ID_RECYCLER_VIEW = "6-13_recycler_view"
 }

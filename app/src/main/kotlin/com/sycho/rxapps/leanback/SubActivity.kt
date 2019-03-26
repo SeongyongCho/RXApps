@@ -8,6 +8,7 @@ import com.sycho.rxapps.Constants
 import com.sycho.rxapps.fragments.OnClickFragment
 import com.sycho.rxapps.R
 import com.sycho.rxapps.fragments.DebounceSearchFragment
+import com.sycho.rxapps.fragments.RecyclerViewFragment
 
 class SubActivity : FragmentActivity() {
 
@@ -31,6 +32,9 @@ class SubActivity : FragmentActivity() {
             }
             Constants.SUB_FRAGMENT_ID_DEBOUNCE_SEARCH -> {
                 fragment = DebounceSearchFragment()
+            }
+            Constants.SUB_FRAGMENT_ID_RECYCLER_VIEW -> {
+                fragment = RecyclerViewFragment()
             }
         }
         fragment?.let {
