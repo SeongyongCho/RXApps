@@ -19,6 +19,11 @@
       "title": "Polling",
       "description": "RxAndroid를 이용한 Timer 클래스 대체",
       "id": "6-25_polling"
+    },
+    {
+      "title": "OkHttp",
+      "description": "Retrofit2과 OkHttp 활용",
+      "id": "6-33_okhttp"
     }
   ]
 }

@@ -5,11 +5,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.leanback.widget.OnItemViewClickedListener
 import com.sycho.rxapps.Constants
-import com.sycho.rxapps.fragments.OnClickFragment
 import com.sycho.rxapps.R
-import com.sycho.rxapps.fragments.DebounceSearchFragment
-import com.sycho.rxapps.fragments.PollingFragment
-import com.sycho.rxapps.fragments.RecyclerViewFragment
+import com.sycho.rxapps.fragments.*
 
 class SubActivity : FragmentActivity() {
 
@@ -39,6 +36,9 @@ class SubActivity : FragmentActivity() {
             }
             Constants.SUB_FRAGMENT_ID_POLLING -> {
                 fragment = PollingFragment()
+            }
+            Constants.SUB_FRAGMENT_ID_OKHTTP -> {
+                fragment = OkHttpFragment()
             }
         }
         fragment?.let {
