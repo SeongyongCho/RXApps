@@ -34,6 +34,20 @@
       "title_color": "#eeeeee",
       "card_color": "#3a354e",
       "component": "com.sycho.rxapps.activities.TimerActivity"
+    },
+    {
+      "title": "HelloActivity",
+      "description": "Disposable 인터페이스를 이용하여 명시적 자원 해제",
+      "title_color": "#eeeeee",
+      "card_color": "#3a354e",
+      "component": "com.sycho.rxapps.activities.HelloActivity"
+    },
+    {
+      "title": "HelloActivityComposite",
+      "description": "CompositeDisposable 클래스 사용하여 명시적 자원 해제",
+      "title_color": "#eeeeee",
+      "card_color": "#3a354e",
+      "component": "com.sycho.rxapps.activities.HelloActivityComposite"
     }
   ]
 }

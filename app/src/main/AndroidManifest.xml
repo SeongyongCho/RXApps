@@ -31,6 +31,8 @@
         <activity android:name=".leanback.SubActivity" />
         <activity android:name=".activities.AsyncTaskActivity" />
         <activity android:name=".activities.TimerActivity" />
+        <activity android:name=".activities.HelloActivity" />
+        <activity android:name=".activities.HelloActivityComposite" />
     </application>
 
 </manifest>
