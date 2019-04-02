@@ -9,6 +9,7 @@ import com.sycho.rxlib.sample.ch2.subject.ReplaySubjectExample
 import com.sycho.rxlib.sample.ch3.*
 import com.sycho.rxlib.sample.ch4.*
 import com.sycho.rxlib.sample.ch5.*
+import com.sycho.rxlib.sample.ch7.DoOnExample
 import com.sycho.rxlib.sample.common.Utils
 
 /**
@@ -35,7 +36,8 @@ object Main {
 //        launchCh4To3()
 //        launchCh4To4()
 //        launchCh4To5()
-        launchCh5To1()
+//        launchCh5To1()
+        launchCh7To1()
     }
 
     private fun launchCh2To1() {
@@ -229,5 +231,16 @@ object Main {
         val callbackHeaven = CallbackHeaven()
 //        callbackHeaven.usingConcat()
         callbackHeaven.usingZip()
+    }
+
+    private fun launchCh7To1() {
+        val doOnExample = DoOnExample()
+//        doOnExample.basic()
+//        doOnExample.withError()
+//        doOnExample.doOnEach()
+//        doOnExample.doOnEachObserver()
+//        doOnExample.doOnSubscribeAndDispose()
+//        doOnExample.doOnLifeCycle()
+        doOnExample.doOnTerminate()
     }
 }
